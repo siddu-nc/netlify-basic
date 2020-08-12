@@ -2,6 +2,8 @@ backend:
   name: github
   branch: master
   repo: siddu-nc/netlify-basic
+  local_backend:
+    url: http://localhost:8081/api/v1
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
@@ -295,3 +297,38 @@ collections:
           - { label: "DateOfBirth", name: "DOB", widget: "date", default: "" }
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "owner-page"}
           - { label: "Description", name: "body", widget: "markdown", required: false}
+
+      - file: "src/config/index.md"
+        label: "Site Configuration"
+        name: "site_configuation"
+        fields: 
+        - label: "Site Configuration"
+          name: "templateKey"
+          widget: "hidden"
+          default: "site_configuration"
+              
+        - label : "Header Configuration"
+          name: "header"
+          widget: "object"
+          fields: 
+          # - { label: "Page Title", name: "page_title", widget: "string", required: false }
+          - { label: "Page Logo", name: "page_logo", widget: "image", required: true }
+          # TODO Navigation
+
+        - label: "Footer Configuation"
+          name: "footer"
+          widget: "object"
+          fields: 
+          - label: "Social Media Configuration"
+            name: "social_follower"
+            widget: "object"
+            fields:
+              - { label: "title", name: "title", widget: "string"}
+              - label: "Follower Logo" 
+                name: "logo" 
+                widget: "list"
+                fields:
+                - { label: "Social media name", name: "title", widget: "string"}
+                - { label: "Social media icon", name: "image", widget: "image"}
+                - { label: "Social media url", name: "url", widget: "string"}
+
