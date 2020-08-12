@@ -298,21 +298,17 @@ collections:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "owner-page"}
           - { label: "Description", name: "body", widget: "markdown", required: false}
 
-      - file: "src/config/index.md"
+      - file: "src/config/site_config.md"
         label: "Site Configuration"
         name: "site_configuation"
-        fields: 
-        - label: "Site Configuration"
-          name: "templateKey"
-          widget: "hidden"
-          default: "site_configuration"
-              
+        fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "site_config"}
         - label : "Header Configuration"
           name: "header"
           widget: "object"
-          fields: 
-          # - { label: "Page Title", name: "page_title", widget: "string", required: false }
-          - { label: "Page Logo", name: "page_logo", widget: "image", required: true }
+          fields:
+          # - { label: "Main title", name: "title", widget: "string"}  
+          - { label: "Page Logo", name: "logo", widget: "image", required: true }
           # TODO Navigation
 
         - label: "Footer Configuation"
