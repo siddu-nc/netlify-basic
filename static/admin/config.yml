@@ -302,7 +302,6 @@ collections:
         label: "Site Configuration"
         name: "site_configuation"
         fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "site_config"}
         - label : "Header Configuration"
           name: "header"
           widget: "object"
@@ -327,4 +326,5 @@ collections:
                 - { label: "Social media name", name: "title", widget: "string"}
                 - { label: "Social media icon", name: "image", widget: "image"}
                 - { label: "Social media url", name: "url", widget: "string"}
-
+        
+        - { label: "Template Key", name: "templateKey", widget: "hidden", default: "site-config"}
