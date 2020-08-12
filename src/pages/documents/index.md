@@ -1,8 +1,9 @@
 ---
 firstname: John
 lastname: Wick
-DOB: 2020-08-10T09:11:10.280Z
-description: >-
+DOB: 2020-08-10T09:11:10.
+templateKey: owner-page
+body: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu molestie
   justo. Pellentesque quis tortor ac lectus ullamcorper lacinia. Nam ac porta
   dolor, sit amet sodales felis. Cras congue at erat quis interdum. Maecenas
