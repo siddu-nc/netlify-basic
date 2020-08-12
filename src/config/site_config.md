@@ -3,7 +3,7 @@ header:
   logo: /img/cs_logo__white.png
 footer:
   social_follower:
-    title: follow us on
+    title: "follow us on "
     logo:
       - title: Facebook
         image: /img/facebook_logo.jpeg
