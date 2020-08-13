@@ -7,7 +7,7 @@ footer:
     title: follow us on
     logo:
       - title: Facebook
-        image: /img/facebook_logo.jpeg
+        image: /img/facebook_logo.png
         url: https://www.facebook.com/
       - title: Instagram
         image: /img/instagram_logo.jpeg
