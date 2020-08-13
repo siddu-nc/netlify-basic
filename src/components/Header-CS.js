@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const Header_CS = ({ data }) => {
-  const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header
+  const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header;
+  console.log(data);
   return (
     <div className="header-container">
       <div className="header-logo-container">

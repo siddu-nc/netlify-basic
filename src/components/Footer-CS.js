@@ -4,6 +4,7 @@ import PropTypes, { shape } from 'prop-types'
 
 const Footer_CS = ({data}) => {
   const footer_data = data.allMarkdownRemark.edges[0].node.frontmatter.footer;
+  console.log(footer_data);
   return <div className="footer-container">
    {
      footer_data.social_follower && (
