@@ -30,9 +30,21 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
-
     posts.forEach((edge) => {
       const id = edge.node.id
+      if (edge.node.frontmatter.templateKey === 'site-config') {
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(`src/components/Header-CS.js`),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        })
+
+        return ''
+      }
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
