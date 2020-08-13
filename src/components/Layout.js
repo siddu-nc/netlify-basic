@@ -6,7 +6,10 @@ import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ children }) => {
+import Header_CS from './Header-CS'
+import Footer_CS from './Footer-CS'
+
+const TemplateWrapper = ({ children, blogPost }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -48,9 +51,11 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      {/* <Navbar /> */}
+      <Header_CS />
       <div>{children}</div>
-      <Footer />
+      <Footer_CS />
+      {/* <Footer /> */}
     </div>
   )
 }

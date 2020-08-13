@@ -1,4 +1,5 @@
 ---
+templateKey: "site-config"
 header:
   logo: /img/cs_logo__white.png
 footer:

@@ -10,6 +10,36 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+
+.header-container
+  background-color: transparent
+  position: absolute
+  top: 20px
+  left: 7%
+  z-index: 100
+  .header-logo-container
+    img
+      width: 269px;
+      height: 92px;
+
+.footer-container
+  background-color: #F4DAB34B
+  height: 150px
+  .social_follower_container
+    position: absolute
+    right: 10%
+    margin-top: 20px
+    .social_text
+      color: #000
+      font-size: 28px
+      font-weight: bold
+    .social_media_container
+      display: flex
+      .social-media-icon img
+        width: 80px
+        height: 80px
+        margin-right: 10px
+
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -121,7 +151,6 @@ $menu-label-color: $white-ter
 .blog-list-item .featured-thumbnail
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
-
 
 @import "~bulma"
 
