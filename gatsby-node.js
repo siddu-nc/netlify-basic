@@ -45,6 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         return ''
       }
+      console.log(edge.node.fields.slug, 'slugg')
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,

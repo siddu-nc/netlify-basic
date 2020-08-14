@@ -1,16 +1,18 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+
+import NavBar_CS from './NavBar-CS'
 
 const Header_CS = ({ data }) => {
-  const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header;
-  console.log(data);
+  const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header
   return (
     <div className="header-container">
       <div className="header-logo-container">
         <img src={header_data.logo.childImageSharp.fluid.src} />
       </div>
+
+      <NavBar_CS />
     </div>
   )
 }

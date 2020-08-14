@@ -297,7 +297,9 @@ collections:
           - { label: "DateOfBirth", name: "DOB", widget: "date", default: "" }
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "owner-page"}
           - { label: "Description", name: "body", widget: "markdown", required: false}
-
+  - name: "Site Configuration"
+    label: "Site Configuration"
+    files:
       - file: "src/config/site_config.md"
         label: "Site Configuration"
         name: "site_configuation"
@@ -308,7 +310,22 @@ collections:
           fields:
           # - { label: "Main title", name: "title", widget: "string"}  
           - { label: "Page Logo", name: "logo", widget: "image", required: true }
-          # TODO Navigation
+          - label: "Navigation Menu"
+            name: "nav"
+            widget: "list"
+            fields: 
+            - { label: "Main Menu title", name: "main_menu", widget: "string" }
+            - { label: "Has sub menu", name: "has_submenu", widget: "boolean", default: false,required: false }
+            - { label: "path", name: "path", widget: "relation", collection: "Page Sections", searchFields: ["title"],    valueField: 'title', displayFields: ['title'], hint: "Don't select if the item has sub menu", required: false
+            }
+            - label: "Sub Menu Items"
+              name: "sub_menu"
+              widget: "list"
+              fields:
+              - {label: "Title", name: "sub_menu_title", widget: "string"}
+              - { label: "path", name: "path", widget: "relation", collection: "Page Sections", searchFields: ["title"],  valueField: 'slug', displayFields: ['title'], hint: "Don't select if the item has sub menu"
+            }
+                
 
         - label: "Footer Configuation"
           name: "footer"
@@ -327,4 +344,14 @@ collections:
                 - { label: "Social media icon", name: "image", widget: "image"}
                 - { label: "Social media url", name: "url", widget: "string"}
         
-        - { label: "Template Key", name: "templateKey", widget: "hidden", default: "site-config"}
+        - { label: "Template Key", name: "templateKey", widget: "hidden", default: "site-config"}      
+  - name: "Page Sections"
+    label: "Page Sections"
+    folder: "src/pages"
+    slug: "{{slug}}/index"
+    create: true
+    fields:
+    - {label: "Page name", widget: "string", name: "title"}
+    - {label: "Template Key", widget: "hidden",name: "templateKey", default: "section"}
+    - {label: "Body Section", widget: "markdown", name: "body"}
+    - {label: "slug", widget: "string", name: "slug"}
