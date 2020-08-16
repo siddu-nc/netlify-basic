@@ -2,11 +2,36 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
 const Footer_CS = ({ data }) => {
-  const {footer:footer_data,header:header_data} = data.allMarkdownRemark.edges[0].node.frontmatter;
-  console.log(footer_data);
-  console.log(header_data);
+  const {
+    footer: footer_data,
+    header: header_data,
+  } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <div className="footer-container">
+      {!!header_data.nav.length && (
+        <div className="footer-menu-section-wrapper">
+          {header_data.nav.map((menu) => (
+            <div className="footer-menu-section" key={menu.main_menu}>
+              <div className="footer-main-menu-wrapper">
+                <div className="main-menu">
+                  {menu.has_submenu
+                    ? <span> <b>{menu.main_menu.slice(0, 4)}</b>{menu.main_menu.slice(4)}</span>
+                    : menu.main_menu
+                  }
+                </div>
+              </div>
+              {menu.has_submenu && (
+                <div className="footer-sub-menu-wrapper">
+                  {menu.sub_menu.map((sub_menu) => (
+                    <div className="sub-menu" key={sub_menu.sub_menu_title}>{sub_menu.sub_menu_title}</div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
       {footer_data.social_follower && (
         <div className="social_follower_container">
           <div className="social_text">{footer_data.social_follower.title}</div>

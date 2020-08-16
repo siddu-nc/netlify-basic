@@ -21,7 +21,6 @@ const NavBar = ({ data }) => {
     toggleNavigation(!isNavOpen)
     toggleNavbarActiveClass(!navbarActiveClass ? 'active' : '')
   }
-
   const Nav_Menu = data.allMarkdownRemark.edges[0].node.frontmatter.header.nav
   return (
     <>
@@ -33,7 +32,7 @@ const NavBar = ({ data }) => {
         )}
       </div>
       <div className={`navigation-container ${navbarActiveClass}`}>
-        <div className={"navigation-menu-wrapper"}>
+        <div className={'navigation-menu-wrapper'}>
           {Nav_Menu.map((menu) => (
             <div className="main-menu-wrapper" key={menu.main_menu}>
               <div className="main-menu-title">

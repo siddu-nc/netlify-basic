@@ -348,6 +348,7 @@ collections:
   - name: "Page Sections"
     label: "Page Sections"
     folder: "src/pages"
+    path: "{{slug}}/index.md"
     slug: "{{slug}}/index"
     create: true
     fields:

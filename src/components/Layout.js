@@ -8,7 +8,7 @@ import Header_CS from './Header-CS'
 import Footer_CS from './Footer-CS'
 
 const TemplateWrapper = ({ children, blogPost }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = useSiteMetadata();
   return (
     <div>
       <Helmet>
