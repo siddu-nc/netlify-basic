@@ -1,6 +1,6 @@
 ---
 title: sunday2336
 templateKey: section
-slug: sunday
+slug: tuesday1732
 ---
 sunday
