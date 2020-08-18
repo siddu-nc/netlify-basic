@@ -4,7 +4,7 @@ header:
   nav:
     - has_submenu: false
       main_menu: about
-      path: Home
+      path: tuesday1732
       sub_menu: []
     - has_submenu: true
       main_menu: agricapture
