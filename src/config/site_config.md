@@ -1,6 +1,6 @@
 ---
 header:
-  logo: /img/cs_logo__white.png
+  logo: /img/CS_logo.svg
   nav:
     - has_submenu: false
       main_menu: about
