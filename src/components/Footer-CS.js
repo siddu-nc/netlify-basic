@@ -14,16 +14,23 @@ const Footer_CS = ({ data }) => {
             <div className="footer-menu-section" key={menu.main_menu}>
               <div className="footer-main-menu-wrapper">
                 <div className="main-menu">
-                  {menu.has_submenu
-                    ? <span> <b>{menu.main_menu.slice(0, 4)}</b>{menu.main_menu.slice(4)}</span>
-                    : menu.main_menu
-                  }
+                  {menu.has_submenu ? (
+                    <span>
+                      {' '}
+                      <b>{menu.main_menu.slice(0, 4)}</b>
+                      {menu.main_menu.slice(4)}
+                    </span>
+                  ) : (
+                    menu.main_menu
+                  )}
                 </div>
               </div>
               {menu.has_submenu && (
                 <div className="footer-sub-menu-wrapper">
                   {menu.sub_menu.map((sub_menu) => (
-                    <div className="sub-menu" key={sub_menu.sub_menu_title}>{sub_menu.sub_menu_title}</div>
+                    <div className="sub-menu" key={sub_menu.sub_menu_title}>
+                      {sub_menu.sub_menu_title}
+                    </div>
                   ))}
                 </div>
               )}

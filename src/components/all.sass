@@ -1,5 +1,11 @@
 @import "~bulma/sass/utilities/initial-variables"
 
+@tailwind base
+
+@tailwind components
+
+@tailwind utilities
+
 // Config vars
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
@@ -10,51 +16,53 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+html.active
+  overflow: hidden
 
 .header-container
-  background-color: transparent
+  //background-color: transparent
   .navigation-menu-toggle-wrapper
-    position: absolute
-    right: 10%
-    top: 5%
-    display: flex
-    width: 50px
-    height: 50px
-    justify-content: center
-    align-items: center
-    background: #fff
-    border-radius: 50%
-    z-index: 100
-    cursor: pointer
+    //position: absolute
+    //right: 10%
+    //top: 5%
+    //display: flex
+    //width: 50px
+    //height: 50px
+    //justify-content: center
+    //align-items: center
+    //background: #fff
+    //border-radius: 50%
+    //z-index: 100
+    //cursor: pointer
   .navigation-container.active
-    display: block
+    //display: block
   .navigation-container
-    display: none
-    min-height: 100vh
+    //display: none
+    //min-height: 100vh
     background-color:  #009247
     .navigation-menu-wrapper
-      position: absolute
-      top: 25%
-      left: 15%
+      //position: absolute
+      //top: 25%
+      //left: 15%
     .main-menu-wrapper
-      margin-bottom: 25px
-      font-size: 32px
+      //margin-bottom: 25px
+      //font-size: 32px
       color: #fff
-      text-transform: lowercase
-      font-weight: 100
+      //text-transform: lowercase
+      //font-weight: 100
       .main-menu-title
-        font-weight: 700
+        //font-weight: 700
       a
         color: inherit
 
   .header-logo-container
-    position: absolute
-    top: 20px
-    left: 7%
-    z-index: 100
+    //position: absolute
+    //top: 20px
+    //left: 7%
+    //z-index: 100
     img
-      width: 269px;
-      height: 92px;
+      //width: 269px;
+      //height: 92px;
 
 .footer-container
   background-color: #F4DAB34B

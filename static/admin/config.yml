@@ -316,7 +316,7 @@ collections:
             fields: 
             - { label: "Main Menu title", name: "main_menu", widget: "string" }
             - { label: "Has sub menu", name: "has_submenu", widget: "boolean", default: false,required: false }
-            - { label: "path", name: "path", widget: "relation", collection: "Page Sections", searchFields: ["title"],    valueField: 'title', displayFields: ['title'], hint: "Don't select if the item has sub menu", required: false
+            - { label: "path", name: "path", widget: "relation", collection: "Page Sections", searchFields: ["title"],    valueField: 'slug', displayFields: ['title'], hint: "Don't select if the item has sub menu", required: false
             }
             - label: "Sub Menu Items"
               name: "sub_menu"
@@ -345,11 +345,16 @@ collections:
                 - { label: "Social media url", name: "url", widget: "string"}
         
         - { label: "Template Key", name: "templateKey", widget: "hidden", default: "site-config"}      
+  
   - name: "Page Sections"
     label: "Page Sections"
     folder: "src/pages"
-    path: "{{slug}}/index.md"
-    slug: "{{slug}}/index"
+    path: "{{slug}}/index"
+    nested: 
+      depth: 100
+      summary: "{{title}}"
+    allow_nesting: true
+    meta: {path:{widget:'string',label:'path',index_file:'index.md'}}
     create: true
     fields:
     - {label: "Page name", widget: "string", name: "title"}

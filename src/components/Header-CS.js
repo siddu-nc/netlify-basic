@@ -7,8 +7,8 @@ import NavBar_CS from './NavBar-CS'
 const Header_CS = ({ data }) => {
   const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header
   return (
-    <div className="header-container">
-      <div className="header-logo-container">
+    <div className="header-container .bg-transparent">
+      <div className="header-logo-container absolute z-1 top-3 left-7">
         <img src={header_data.logo.childImageSharp.fluid.src} />
       </div>
 
