@@ -8,8 +8,11 @@ const Header_CS = ({ data }) => {
   const header_data = data.allMarkdownRemark.edges[0].node.frontmatter.header
   return (
     <div className="header-container .bg-transparent">
-      <div className="header-logo-container absolute z-1 top-3 left-7">
-        <img src={header_data.logo.childImageSharp.fluid.src} />
+      <div className="header-logo-container absolute z-1 top-3 left-7 w-269 h-92">
+        <img
+          className="w-full"
+          src={header_data.logo.childImageSharp.fluid.src}
+        />
       </div>
 
       <NavBar_CS />

@@ -1,19 +1,22 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+// import RightArrowGreen from '../img/RightArrowGreen'
+import RightArrowWhite from '../img/RightArrowWhite'
+
 const Footer_CS = ({ data }) => {
   const {
     footer: footer_data,
     header: header_data,
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
-    <div className="footer-container">
+    <div className="footer-container px-32 py-8">
       {!!header_data.nav.length && (
-        <div className="footer-menu-section-wrapper">
+        <div className="footer-menu-section-wrapper flex flex-row flex-wrap justify-between mb-8">
           {header_data.nav.map((menu) => (
             <div className="footer-menu-section" key={menu.main_menu}>
               <div className="footer-main-menu-wrapper">
-                <div className="main-menu">
+                <div className="main-menu lowercase text-28px">
                   {menu.has_submenu ? (
                     <span>
                       {' '}
@@ -26,7 +29,7 @@ const Footer_CS = ({ data }) => {
                 </div>
               </div>
               {menu.has_submenu && (
-                <div className="footer-sub-menu-wrapper">
+                <div className="footer-sub-menu-wrapper mt-4">
                   {menu.sub_menu.map((sub_menu) => (
                     <div className="sub-menu" key={sub_menu.sub_menu_title}>
                       {sub_menu.sub_menu_title}
@@ -39,23 +42,46 @@ const Footer_CS = ({ data }) => {
         </div>
       )}
 
-      {footer_data.social_follower && (
-        <div className="social_follower_container">
-          <div className="social_text">{footer_data.social_follower.title}</div>
-          <div className="social_media_container">
-            {footer_data.social_follower.logo.map((logo) => (
-              <div className="social-media-icon" key={logo.title}>
-                <a href={logo.url}>
-                  <img
-                    src={logo.image.childImageSharp.fluid.src}
-                    alt={logo.title}
-                  />
-                </a>
-              </div>
-            ))}
+      <div className="flex justify-between flex-wrap">
+        
+        <div className="subscribe-wrapper w-50p h-80">
+          <div className="subscribe-title text-28px font-bold mb-4">Subscribe for latest news</div>
+          <div className="subscribe-input-wrapper flex flex-row">
+            <input
+              type="text"
+              className="rounded-17 rounded-r-none  p-4 w-full outline-none"
+              placeholder="Enter email address here"
+            />
+            <div
+              className="submit w-90 rounded-l-none rounded-17 "
+              style={{ backgroundColor: '#009247' }}
+            >
+              <RightArrowWhite />
+            </div>
           </div>
         </div>
-      )}
+
+        {footer_data.social_follower && (
+          <div className="social_follower_container">
+            <div className="social_text text-28px font-bold mb-4">
+              {footer_data.social_follower.title}
+            </div>
+            <div className="social_media_container flex">
+              {footer_data.social_follower.logo.map((logo) => (
+                <div className="social-media-icon" key={logo.title}>
+                  <a href={logo.url}>
+                    <img
+                      className="w-80 h-80 mr-4"
+                      src={logo.image.childImageSharp.fluid.src}
+                      alt={logo.title}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

@@ -6,8 +6,15 @@ import { withPrefix } from 'gatsby'
 
 import Header_CS from './Header-CS'
 import Footer_CS from './Footer-CS'
+import HeroBanner from './HeroBanner'
 
 import AppContextProvider, { AppContext } from '../context/index'
+
+const HeroBannerData ={
+  title:"Ensuing a better future",
+  subTitle:"through genuine traceability and verification tools",
+  backgroundImg: "https://cdn-sharing.adobecc.com/id/urn:aaid:sc:US:6c086d48-941b-45a4-bfeb-5307ce8901b4;version=0?component_id=fdd423f7-26dc-449e-a6ae-d53c4bf673cd&api_key=CometServer1&access_token=1597822443_urn%3Aaaid%3Asc%3AUS%3A6c086d48-941b-45a4-bfeb-5307ce8901b4%3Bpublic_b5d233312129b8ad6dc9788123767278221ae5c5"
+}
 
 const TemplateWrapper = ({ children, blogPost }) => {
   const { title, description } = useSiteMetadata()
@@ -59,6 +66,7 @@ const TemplateWrapper = ({ children, blogPost }) => {
 
         {/*TODO handler for html referncing..  */}
         <Header_CS />
+        <HeroBanner heroBanner={HeroBannerData} />
         <div>{children}</div>
 
         <Footer_CS />
