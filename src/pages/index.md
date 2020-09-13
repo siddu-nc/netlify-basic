@@ -68,6 +68,6 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
-coordinates: '{"type":"Point","coordinates":[20.2148438,13.5819209]}'
+coordinates: '{"type":"Point","coordinates":[33.4845601,-1.4620492]}'
 ---
 
