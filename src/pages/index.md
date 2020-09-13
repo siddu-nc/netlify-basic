@@ -69,5 +69,8 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 coordinates: '{"type":"Point","coordinates":[78.4061515,17.336178]}'
+CTALocation:
+  labelText: safsafsafsafsaf
+  locationCoordinates: '{"type":"Point","coordinates":[25.8398437,11.8673509]}'
 ---
 
